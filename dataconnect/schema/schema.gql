@@ -1,0 +1,48 @@
+type Developer @table {
+  name: String!
+  tagline: String!
+  email: String!
+  bio: String
+  profilePictureUrl: String
+  resumeUrl: String
+  githubUrl: String
+  linkedinUrl: String
+  twitterUrl: String
+}
+
+type Project @table {
+  title: String!
+  description: String!
+  technologiesUsed: [String!]!
+  imageUrl: String
+  liveDemoUrl: String
+  repositoryUrl: String
+  order: Int
+  developer: Developer
+}
+
+type Skill @table {
+  name: String!
+  proficiency: String
+  category: String
+  developer: Developer
+}
+
+type Experience @table {
+  title: String!
+  organization: String!
+  startDate: Date!
+  endDate: Date
+  description: String
+  type: String
+  developer: Developer
+}
+
+type BlogPost @table {
+  title: String!
+  content: String!
+  publishedDate: Timestamp!
+  imageUrl: String
+  tags: [String!]
+  developer: Developer
+}
